@@ -27,6 +27,5 @@ The Frontend communicates with the Backend API to browse products, manage the ca
 4. **Track Order**: The user asks to track their order, and the frontend gets the tracking info from the Backend API.
 5. **View Tracking**: The backend gets tracking info from a third-party service, and the frontend shows it to the user.
 
-![Workflow](public/images/System%20Architecture.drawio.png.jpg)
+![Workflow](public/images/System%20Architecture.drawio.png)
 ---
-"# Marketplace-Technical-Foundation-InteriorDesigningWebsite" 
