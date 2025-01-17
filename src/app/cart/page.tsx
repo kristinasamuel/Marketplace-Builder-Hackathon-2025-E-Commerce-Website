@@ -28,7 +28,7 @@ export default function page() {
         </div>
       </div>
       {/* Product detail section price and quantitiy */}
-      {/* <div className="flex flex-col md:flex-row lg:flex-row  items-center justify-center lg:items-start gap-6 w-full mt-20">
+      <div className="flex flex-col md:flex-row lg:flex-row  items-center justify-center lg:items-start gap-6 w-full mt-20">
         <div className=" w-full h-auto lg:w-[817px] lg:h-[215px] ml-0 sm:ml-[50px] md:ml-[100px]  lg:ml-[100px] ">
           <div className="w-full bg-[#F9F1E7] h-[55px] grid grid-cols-4 items-center text-center rounded-[10px] px-4">
             <p className="font-Poppins font-medium text-[16px] text-[#000000]">
@@ -107,7 +107,7 @@ export default function page() {
             </Button>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div>
         <Warranty />

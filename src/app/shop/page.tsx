@@ -1,6 +1,5 @@
 // Home /Shop Page
 import Warranty from "@/components/warranty";
-import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 export default function ShopPage() {

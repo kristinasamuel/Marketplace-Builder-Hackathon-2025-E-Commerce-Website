@@ -1,4 +1,4 @@
-
+//  schema for sanity
 export default {
     name: 'product',
     type: 'document',
@@ -67,7 +67,7 @@ export default {
         type: 'image',
         title: 'Product Image',
         options: {
-          hotspot: true // Enables cropping and focal point selection
+          hotspot: true
         }
       }
     ]
