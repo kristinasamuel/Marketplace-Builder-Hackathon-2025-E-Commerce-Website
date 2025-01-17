@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marketplace Technical Foundation - InteriorDesigningWebsite
 
-## Getting Started
+This marketplace is designed to offer a wide range of high-quality interior design products, including furniture, décor, and lighting. The goal is to provide a user-friendly platform where customers can easily browse, compare, and purchase products to enhance their homes, with various styles and price points.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### General E-commerce
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This document covers the system architecture, key workflows, and technical requirements for building the marketplace platform. It includes details for Day 1 (foundation) and Day 2 (advancement), along with API specifications and workflows for smooth project execution.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
+## DAY 2: PLANNING THE TECHNICAL FOUNDATION
 
-## Learn More
+### 1. System Architecture Overview
 
-To learn more about Next.js, take a look at the following resources:
+The Frontend communicates with the Backend API to browse products, manage the cart, and place orders. Sanity CMS serves as the backend, storing product data for easy access. Additionally, the Backend integrates with third-party APIs for payment processing and order tracking.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![System Architecture](public/images/SystemArchitecture54.drawio.png)
+### Key Workflows
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+1. **Add Product to Cart**: The user selects a product, and the frontend updates the cart through the Backend API.
+2. **Place Order**: The user checks out, and the frontend collects payment details, which the backend processes.
+3. **Order Confirmation**: The frontend shows an order confirmation after the payment is successful.
+4. **Track Order**: The user asks to track their order, and the frontend gets the tracking info from the Backend API.
+5. **View Tracking**: The backend gets tracking info from a third-party service, and the frontend shows it to the user.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Workflow](public/images/System%20Architecture.drawio.png.jpg)
+---
+"# Marketplace-Technical-Foundation-InteriorDesigningWebsite" 
