@@ -1,5 +1,4 @@
 // Home // new product
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
