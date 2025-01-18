@@ -44,7 +44,7 @@ const CheckoutPage = () => {
                     width={100}
                     className="w-16 h-16 object-cover rounded-md mr-4"
                   />
-                  <span>{item.name}</span>
+                  <span>{item.title}</span>
                 </div>
                 <span>${item.price}</span>
               </div>
