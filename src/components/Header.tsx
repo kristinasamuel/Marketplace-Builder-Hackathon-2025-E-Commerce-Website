@@ -37,6 +37,7 @@ export default function Header() {
            <Link href={"/shop"}><li className="hover:text-gray-500 hover:underline">Shop</li> </Link>
            <Link href={"/blog"}><li className="hover:text-gray-500 hover:underline">Blog</li> </Link>
           <Link href={"/contact"}> <li className="hover:text-gray-500 hover:underline">Contact</li></Link>
+          <Link href={"/Products"}> <li className="hover:text-gray-500 hover:underline">products</li></Link>
           <Link href={"/cart"}> <li className="hover:text-gray-500 hover:underline">Cart</li></Link>
           <Link href={"/checkout"}> <li className="hover:text-gray-500 hover:underline">checkOut</li></Link>
         </ul>
@@ -71,7 +72,7 @@ export default function Header() {
            <Link href={"/shop"}><li className="hover:underline">Shop</li> </Link>
            <Link href={"/blog"}><li className="hover:underline">Blog</li> </Link>
           <Link href={"cart"}> <li className="hover:underline">Cart</li></Link>
-          <Link href={"/shop/singleProduct"}> <li className="hover:underline">Products</li></Link>
+          <Link href={"/Products"}> <li className="hover:underline">Products</li></Link>
           <Link href={"/contact"}> <li className="hover:underline">Contact</li></Link>
           </ul>
         </div>

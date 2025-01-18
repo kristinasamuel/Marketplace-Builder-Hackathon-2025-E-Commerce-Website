@@ -29,4 +29,15 @@ The Frontend communicates with the Backend API to browse products, manage the ca
 
 ![Workflow](public/images/System%20Architecture.drawio.png)
 ---
-"# Marketplace-Builder-Hackathon-2025-E-Commerce-Website" 
+
+## Day 3 - API Integration Report - InteriorDesigningWebsite"
+
+our task is to integrate APIs and import data into Sanity CMS.and display it in the frontend 
+
+
+
+
+
+
+
+

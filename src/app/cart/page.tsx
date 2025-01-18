@@ -1,22 +1,44 @@
-// home / Cart section
+// home // Product add to cart
+"use client";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import Warranty from "@/components/warranty";
-import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
-export default function page() {
+import Image from "next/image";
+export default function CartPage() {
+  const [cart, setCart] = useState<any[]>([]);
+
+  //localStorage
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+    setCart(storedCart);
+  }, []);
+
+  const removeFromCart = (productId: string) => {
+    const updatedCart = cart.filter((item) => item._id !== productId);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+
+  //calculate the total price
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center bg-[#FFFFFF] w-full">
-      {/* Active page details  */}
+    <div className="flex flex-col bg-[#FFFFFF] w-full">
+      {/* Banner of cart product */}
       <div
-        className="w-full h-[316px] bg-cover bg-center flex items-center justify-center "
+        className="w-full h-[316px] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: "url('/images/Image 22.png')" }}
       >
-        <div className="flex flex-col  items-center justify-center">
+        <div className="flex flex-col items-center justify-center text-center">
           <Image src={"/images/logo.png"} alt="logo" width={77} height={77} />
           <p className="font-Poppins font-medium text-[48px] text-[#000000]">
             Cart
           </p>
-          <div className="flex  space-x-3">
+          <div className="flex space-x-3">
             <p className="font-Poppins text-[16px] font-medium text-[#000000]">
               Home
             </p>
@@ -27,88 +49,82 @@ export default function page() {
           </div>
         </div>
       </div>
-      {/* Product detail section price and quantitiy */}
-      <div className="flex flex-col md:flex-row lg:flex-row  items-center justify-center lg:items-start gap-6 w-full mt-20">
-        <div className=" w-full h-auto lg:w-[817px] lg:h-[215px] ml-0 sm:ml-[50px] md:ml-[100px]  lg:ml-[100px] ">
-          <div className="w-full bg-[#F9F1E7] h-[55px] grid grid-cols-4 items-center text-center rounded-[10px] px-4">
-            <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-              Product
-            </p>
-            <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-              Price
-            </p>
-            <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-              Quantity
-            </p>
-            <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-              Subtotal
-            </p>
-          </div>
 
-          <div className="flex flex-col  lg:flex-row  mt-16 items-center gap-12">
-            <div className="w-[76px] h-[80px] bg-[#F9F1E7] rounded-[10px] flex items-center justify-center">
-              <Image
-                src="/images/Asgaard sofa 5.png"
-                alt="Asgaard"
-                width={111}
-                height={90}
-              />
+      {/* Cart items and checkout */}
+      <div className="min-h-screen px-4 py-8 flex justify-center items-center">
+        <div className="w-full max-w-4xl">
+          <h1 className="text-[42px] font-bold text-purple-500 text-center mb-8">
+            Your Cart
+          </h1>
+
+          {cart.length === 0 ? (
+            <div className="text-center text-[18px] text-gray-600">
+              Your cart is empty.{" "}
+              <Link href="/Products" className="text-purple-500">
+                Browse Products
+              </Link>
             </div>
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
-              <p className="font-Poppins font-medium text-[16px] text-[#9F9F9F]">
-                Asgaard sofa
-              </p>
-              <p className="font-Poppins font-medium text-[16px] text-[#9F9F9F]">
-                Rs. 250,000.00
-              </p>
-              <div className="w-[32px] h-[32px] rounded-[5px] border border-solid border-[#9F9F9F] flex items-center justify-center ml-0 lg:ml-16">
-                <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-                  1
-                </p>
-              </div>
-              <div className="flex flex-col lg:flex-row gap-12 ml-0 lg:ml-20">
-                <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-                  Rs. 250,000.00
-                </p>
+          ) : (
+            <div className="space-y-6">
+              {cart.map((item) => (
+                <div
+                  key={item._id}
+                  className="flex justify-between items-center bg-white p-4 rounded-lg shadow-md"
+                >
+                  {/* Image and Product Details */}
+                  <div className="flex items-center">
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      width={100}
+                      height={100}
+                      className=" object-contain"
+                    />
+                    <div className="ml-4">
+                      <h3 className="font-medium text-[18px] text-purple-600">
+                        {item.title}
+                      </h3>
+                      <p className="text-[14px] text-gray-600">
+                        Price: ${item.price}
+                      </p>
+                      <p className="text-[14px] text-gray-600">
+                        Quantity: {item.quantity}
+                      </p>
+                    </div>
+                  </div>
 
-                <div className="flex items-center lg:items-start justify-center">
-                  <Image
-                    src="/images/gift.png"
-                    alt="Gift"
-                    width={28}
-                    height={28}
-                  />
+                  {/* Remove Button */}
+                  <Button
+                    onClick={() => removeFromCart(item._id)}
+                    variant={"ghost"}
+                    className=" text-[14px] rounded-lg"
+                  >
+                    Remove
+                  </Button>
                 </div>
+              ))}
+
+              {/* Total Price */}
+              <div className="mt-6 text-right">
+                <p className="text-[18px] text-gray-600 font-medium">
+                  Total: ${calculateTotal().toFixed(2)}
+                </p>
+              </div>
+
+              {/* Checkout Button */}
+              <div className="flex justify-center mt-6">
+                <Link href="/checkout">
+                  <Button className="bg-purple-500 hover:bg-purple-400 text-white text-[16px] rounded-lg">
+                    Proceed to Checkout
+                  </Button>
+                </Link>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="w-[393px] h-[390px] bg-[#F9F1E7] flex flex-col items-center rounded-[10px] p-6">
-          <h4 className="font-semibold font-Poppins text-[22px] sm:text-[24px] md:text-[32px] lg:text-[32px] text-[#000000] mb-6">
-            Cart Totals
-          </h4>
-          <div className=" flex flex-col items-center gap-4 mt-16">
-            <div className="flex space-x-10">
-              <p className="font-Poppins font-medium text-[16px] text-[#000000]">
-                Subtotal
-              </p>
-              <p className="font-Poppins font-medium text-[16px] text-[#9F9F9F]">
-                Rs. 250,000.00
-              </p>
-            </div>
-            <div className="flex space-x-10">
-              <p className="font-Poppins font-medium">Total</p>
-              <p className="font-Poppins font-medium text-[20px] text-[#B88E2F]">
-                Rs. 250,000.00
-              </p>
-            </div>
-            <Button className="w-[222px] h-[58.95px] rounded-[15px] border border-[#000000] bg-[#F9F1E7] hover:bg-[#e0d4c4] text-[#000000] text-[20px] font-Poppins font-normal mt-5">
-              Check Out
-            </Button>
-          </div>
+          )}
         </div>
       </div>
 
+      {/* Warranty Section */}
       <div>
         <Warranty />
       </div>
