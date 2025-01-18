@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 
+// Create interface
 interface IProducts {
   _id: string;
   title: string;
