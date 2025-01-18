@@ -6,6 +6,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
+
+interface IProducts {
+    _id: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    tag: string;
+    price: number;
+    discountPercentage: number;
+    isNew: boolean;
+  }
 export default async function ProductPage() {
   // Fetch products
   const query = await client.fetch(
@@ -42,7 +53,7 @@ export default async function ProductPage() {
         </h1>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {query.map((product: any) => (
+          {query.map((product:IProducts) => (
             <Card
               key={product._id}
               className="w-full p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all"

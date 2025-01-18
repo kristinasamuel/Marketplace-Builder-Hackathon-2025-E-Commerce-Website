@@ -8,7 +8,17 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
-
+ 
+interface IProducts {
+  _id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  tag: string;
+  price: number;
+  discountPercentage: number;
+  isNew: boolean;
+} 
 export default function ProductDetailPage() {
   const [product, setProduct] = useState<any | null>(null);
   const { id } = useParams(); // Use `useParams()` to access `id` from the URL
@@ -37,7 +47,7 @@ export default function ProductDetailPage() {
     const currentCart = JSON.parse(localStorage.getItem("cart") || "[]");
 
     const productAdded = currentCart.findIndex(
-      (item: any) => item._id === product._id
+      (item: IProducts) => item._id === product._id
     );
 
     if (productAdded !== -1) {

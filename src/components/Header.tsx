@@ -37,9 +37,9 @@ export default function Header() {
            <Link href={"/shop"}><li className="hover:text-gray-500 hover:underline">Shop</li> </Link>
            <Link href={"/blog"}><li className="hover:text-gray-500 hover:underline">Blog</li> </Link>
           <Link href={"/contact"}> <li className="hover:text-gray-500 hover:underline">Contact</li></Link>
-          <Link href={"/Products"}> <li className="hover:text-gray-500 hover:underline">products</li></Link>
+          <Link href={"/Products"}> <li className="hover:text-gray-500 hover:underline">Products</li></Link>
           <Link href={"/cart"}> <li className="hover:text-gray-500 hover:underline">Cart</li></Link>
-          <Link href={"/checkout"}> <li className="hover:text-gray-500 hover:underline">checkOut</li></Link>
+          <Link href={"/checkout"}> <li className="hover:text-gray-500 hover:underline">CheckOut</li></Link>
         </ul>
 
         <div className="hidden sm:flex flex-row items-center gap-6">
