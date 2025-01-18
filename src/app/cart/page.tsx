@@ -1,11 +1,11 @@
 // home // Product add to cart
 "use client";
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Warranty from "@/components/warranty";
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 export default function CartPage() {
   const [cart, setCart] = useState<any[]>([]);
 
