@@ -43,7 +43,7 @@ export default function ProductDetailPage() {
         if (productDetail.length > 0) {
           setProduct(productDetail[0]);
         }
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false); 
       };
       fetchProduct();
     }
@@ -96,7 +96,7 @@ export default function ProductDetailPage() {
         <IoIosArrowForward />
         <p className="font-Poppins font-normal text-[16px] text-[#9F9F9F]">New Product</p>
         <IoIosArrowForward />
-        <Image src={"/images/line 5.png"} alt="logo" height={20} width={1} className="w-[1px] h-auto border-2 border-solid border-[#9F9F9F]" />
+        <Image src={"/images/Line 5.png"} alt="logo" height={20} width={1} className="w-[1px] h-auto border-2 border-solid border-[#9F9F9F]" />
         <p className="font-Poppins font-normal text-[16px] text-[#000000]">Product Detail</p>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-4 py-8 space-y-8 md:space-y-0">
@@ -153,3 +153,4 @@ export default function ProductDetailPage() {
     </div>
   );
 }
+

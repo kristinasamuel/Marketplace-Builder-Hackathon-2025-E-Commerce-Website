@@ -16,7 +16,7 @@ This document covers the system architecture, key workflows, and technical requi
 ### 1. System Architecture Overview
 
 The Frontend communicates with the Backend API to browse products, manage the cart, and place orders. Sanity CMS serves as the backend, storing product data for easy access. Additionally, the Backend integrates with third-party APIs for payment processing and order tracking.
-
+On Day 2, we focus on how the website works. We’ll use Sanity for managing content, Next.js for the frontend, and APIs to connect everything, with Sanity handling the backend.
 ![System Architecture](public/images/SystemArchitecture54.drawio.png)
 ### Key Workflows
 
