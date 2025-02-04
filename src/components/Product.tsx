@@ -7,7 +7,8 @@ export default function OurProduct() {
       <div className="flex items-center">
         <h1 className="font-Poppins text-[40px] font-bold text-center mt-10">Our Products</h1>
         </div>
-        <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-col-4  gap-6 mt-14 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-14">
+
           {/* Image 1 */}
           <div className="relative flex flex-col w-[285px] h-[446px] bg-[#F4F5F7] ">
           <Image 
@@ -193,7 +194,7 @@ export default function OurProduct() {
           <div className="flex items-center justify-center mt-10">
 <Button className="w-[245px] h-[48px] border border-[#B88E2F] hover:bg-gray-300  text-[16px] font-Poppins font-semibold text-[#B88E2F] bg-[#ffffff]"> Show More
 
-</Button>
+</Button> 
           </div>
         </div>
    

@@ -12,7 +12,7 @@ export default function HeroSection() {
           <h3 className="font-Poppins font-semibold text-[16px] text-[#333333]">
             New Arrival
           </h3>
-          <h4 className=" font-bold text-[24px] sm:text-[32px] md:text-[40px] lg:text-[52px] w-full lg:w-[400px] items-center text-[#B88E2F]">
+          <h4 className="font-bold text-[24px] sm:text-[32px] md:text-[40px] lg:text-[52px] w-full lg:w-[400px] items-center text-[#B88E2F]">
             Discover Our New Collection
           </h4>
           <p className="font-Poppins font-medium text-[18px] text-[#333333] w-full lg:w-[530px] h-[52px] mt-2 lg:mt-5 ">
